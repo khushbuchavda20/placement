@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="placement_information_student_action" model="ir.actions.act_window">
+        <field name="name">Students Information</field>
+        <field name="res_model">placement.placement</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <menuitem id="menu_placement_root" name="Placement">
+        <menuitem id="menu_placement_student" name="Student">
+            <menuitem id="menu_placement_action" action="placement_information_student_action"/>
+        </menuitem>
+    </menuitem>
+
+</odoo>
+
+

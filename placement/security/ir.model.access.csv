@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+placement.access_placement_placement,access_placement_placement,placement.model_placement_placement,base.group_user,1,1,1,1
