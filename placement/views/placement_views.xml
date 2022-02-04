@@ -27,6 +27,7 @@
                             <field name="email_id" />
                             <field name="contact" />
                             <field name="dob" />
+                            <field name="branch" />
                         </group>
                     </sheet>
                 </form>
