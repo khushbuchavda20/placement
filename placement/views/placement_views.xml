@@ -5,32 +5,148 @@
         <field name="name">Student Name</field>
         <field name="model">placement.placement</field>
         <field name="arch" type="xml">
-                <tree>
-                    <field name="name" />
-                    <field name="email_id" />
-                    <field name="contact" />
-                    <field name="dob" />
-                </tree>
+            <tree>
+                <field name="name" />
+                <field name="email_id" />
+                <field name="contact" />
+                <field name="dob" />
+            </tree>
         </field>
     </record>
-
 
 
     <record id="student_form" model="ir.ui.view">
         <field name="name">Student Name</field>
         <field name="model">placement.placement</field>
         <field name="arch" type="xml">
-                <form>
-                    <sheet>
-                        <group>                        
-                            <field name="name" />
-                            <field name="email_id" />
-                            <field name="contact" />
-                            <field name="dob" />
-                            <field name="branch" />
-                        </group>
-                    </sheet>
-                </form>
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="email_id" />
+                        <field name="contact" />
+                        <field name="dob" />
+                        <field name="branch" />
+                        <field name="university"/>
+                        <field name="year" />
+                        <field name="cv_upload" widget="binary" string="CV Upload"/>
+                        <field name="interested_subject" />
+                        <!-- <field name="cv_upload" widget="binary" string="CV Upload"/> -->
+                    </group>
+                    <notebook>
+                        <page string="10th Details">
+                            <group>
+                                <group>
+                                    <field name="std_school" />
+                                    <field name="std_board" />
+                                </group>
+                                <group>
+                                    <field name="std_comp_school" />
+                                    <field name="std_percentage" />
+                                </group>
+                            </group>
+                        </page>
+                        <page string="12th Details">
+                            <group>
+                                <group>
+                                    <field name="std12_school" />
+                                    <field name="std12_board" />
+                                </group>
+                                <group>
+                                    <field name="std12_comp_school" />
+                                    <field name="std12_percentage" />
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
         </field>
     </record>
+
+    <record id="company_tree" model="ir.ui.view">
+        <field name="name">comapny Name</field>
+        <field name="model">company.placement</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="company_name" />
+                <field name="position" />
+                <field name="city" />
+                <field name="ctc" />
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="company_form" model="ir.ui.view">
+        <field name="name">Student Name</field>
+        <field name="model">company.placement</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="company_name" />
+                        <!-- <field name="company_type" /> -->
+                        <field name="company_details" />
+                        <field name="position" />
+
+                    </group>
+                    <notebook>
+                        <page string="other details">
+                            <group>
+                                <group>
+                                    <field name="city" />
+                                    <field name="state" />
+                                    <field name="country" />
+                                </group>
+                                <group>
+                                    <field name="ctc" />
+                                    <field name="intern_duration" />
+                                    <field name="intern_stpd" />
+                                    <field name="reg_close" />
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="company_placement_view_kanban" model="ir.ui.view">
+        <field name="name">company placement Kanban</field>
+        <field name="model">company.placement</field>
+        <field name="arch" type="xml">
+            <kanban class="o_res_partner_kanban">
+
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click">
+                            <h2>
+                                <field name="company_name" />
+                            </h2>
+                            <br />
+                            <div>
+                                <h5>
+                                    Location:
+                                    <field name="city" />
+                                    ,
+                                    <field name="state" />
+                                </h5>
+                            </div>
+                            <div>
+                                CTC:
+                                <field name="ctc" />
+                            </div>
+                            <div>
+                                <button class="btn btn-primary" style="float: right; margin:5px;">Apply</button>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    
 </odoo>

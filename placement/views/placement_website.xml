@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="placement_std_form">
+        <div t-call="website.layout">
+            <div class="wrap m-2">
+                <div class="oe_structure">
+                    <div class="container">
+                        <form role="form" action="submitform" method="POST">
+                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+
+                            <div class="form-group row">
+                                <label for="name" class="col-sm-2 col-form-label">Name</label>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" name="name" t-att-value="name" id="name" />
+                                </div>
+                            </div>
+                            <!-- <div class="form-group row">
+                                <label for="address" class="col-sm-2 col-form-label">address</label>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" name="address" t-att-value="address" id="address" />
+                                </div>
+                            </div> -->
+                            <div class="form-group row">
+                                <label for="email_id" class="col-sm-2 col-form-label">Email id</label>
+                                <div class="col-md-6">
+                                    <input type="email" class="form-control" name="email_id" t-att-value="email_id" id="email_id" />
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="contact" class="col-sm-2 col-form-label">Contact No.</label>
+                                <div class="col-md-6">
+                                    <input type="number" class="form-control" name="contact" t-att-value="contact" id="contact" />
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="dob" class="col-sm-2 col-form-label">Date of birth</label>
+                                <div class="col-md-6">
+                                    <input type="date" class="form-control" name="dob" t-att-value="dob" id="dob" />
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="interested_subject" class="col-sm-2 col-form-label">Interested subject</label>
+                                <div class="col-md-6">
+                                    <select name="interested_subject" class="form-control" id="sub">
+                                        <option value="python">Python</option>
+                                        <option value="sql">SQL</option>
+                                        <option value="ml">Machine Learning</option>
+                                        <option value="cs">Cyber Security</option>
+                                        <option value="php">PHP</option>
+                                        <option value="ds">Data Structure</option>
+                                        <option value="dp">Design Pattern</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="university" class="col-sm-2 col-form-label">University</label>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" name="university" t-att-value="university" id="university" default="Gujarat Vidyapith" />
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="branch" class="col-sm-2 col-form-label">Branch</label>
+                                <div class="col-md-6">
+                                    <select name="branch" class="form-control" id="bch">
+                                        <option value="mca">MCA (Master in Computer Application</option>
+                                        <option value="ma">M.A.</option>
+                                        <option value="msw">M.S.W.</option>
+                                        <option value="mphill">M.Phil and Ph.D.</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <br />
+                            <h4>10th Details</h4>
+                            <hr />
+                            <div class="form-group row">
+                                <label for="std_school" class="col-sm-2 col-form-label">School Name</label>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" name="std_school" t-att-value="std_school" id="std_school" />
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="std_board" class="col-sm-2 col-form-label">Board</label>
+                                <div class="col-md-6">
+                                    <select name="std_board" class="form-control" id="stdb">
+                                        <option value="cbse">Central Board of Secondary Education (CBSE)</option>
+                                        <option value="gseb">Gujarat Secondary and Higher Secondary Education Board (GSEB)</option>
+                                        <option value="mb">Maharashtra Board</option>
+                                        <option value="icse">Indian Certificate of Secondary Education (ICSE)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="std_comp_school" class="col-sm-2 col-form-label">Year Complated</label>
+                                <div class="col-md-6">
+                                    <select name="std_comp_school" class="form-control" id="stdcb">
+                                        <option value="2016">2016</option>
+                                        <option value="2017">2017</option>
+                                        <option value="2018">2018</option>
+                                        <option value="2019">2019</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="std_percentage" class="col-sm-2 col-form-label">Aggregate Percentage</label>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" name="std_percentage" t-att-value="std_percentage" id="std_percentage" />
+                                </div>
+                            </div>
+                            <br />
+                            <h4>12th Details</h4>
+                            <hr />
+                            <div class="form-group row">
+                                <label for="std12_school" class="col-sm-2 col-form-label">School Name</label>
+                                <div class="col-md-6">
+
+                                    <input type="text" class="form-control" name="std12_school" t-att-value="std12_school" id="std12_school" />
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="std12_board" class="col-sm-2 col-form-label">Board</label>
+                                <div class="col-md-6">
+                                    <select name="std12_board" class="form-control" id="stdb">
+                                        <option value="gshseb">GUJARAT SECONDARY AND HIGHER SECONDARY EDUCATION BOARD</option>
+                                        <option value="msbshse">MAHARASHTRA STATE BOARD OF SECONDARY AND HIGHER SECONDARY EDUCATION</option>
+                                        <option value="isce">ICSE BOARD ( INDIAN COUNCIL OF SECONDARY EDUCATION</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="std12_comp_school" class="col-sm-2 col-form-label">Year Complated</label>
+                                <div class="col-md-6">
+                                    <select name="std12_comp_school" class="form-control" id="std12b">
+                                        <option value="2017">2017</option>
+                                        <option value="2018">2018</option>
+                                        <option value="2019">2019</option>
+                                        <option value="2020">2020</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="std12_percentage" class="col-sm-2 col-form-label">Aggregate Percentage</label>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" name="std12_percentage" t-att-value="std12_percentage" id="std12_percentage" />
+                                </div>
+                            </div>
+                            <div class="clearfix oe_login_buttons">
+                                <button type="submit" class="btn btn-primary pull-left">submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+    <template id="placement_com_form">
+        <div t-call="website.layout">
+            <div class="wrap m-2">
+                <div class="oe_structure">
+                    <div class="container">
+                        <form role="form" action="submitcomform" method="POST">
+                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+
+                            <div class="form-group row">
+                                <label for="company_name" class="col-sm-2 col-form-label">Company Name</label>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" name="company_name" t-att-value="company_name" id="company_name" />
+                                </div>
+                            </div>
+
+                            <!-- <div class="form-group row">
+                                <label for="company_type" class="col-sm-2 col-form-label">Company Type</label>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" name="company_type" t-att-value="company_type" id="company_type" />
+                                </div>
+                            </div> -->
+                            <div class="form-group row">
+                                <label for="company_details" class="col-sm-2 col-form-label">company details</label>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" name="company_details" t-att-value="company_details" id="company_details" />
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="position" class="col-sm-2 col-form-label">Position</label>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" name="position" t-att-value="position" id="position" />
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="city" class="col-sm-2 col-form-label">City</label>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" name="city" t-att-value="city" id="city" />
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="state" class="col-sm-2 col-form-label">State</label>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" name="state" t-att-value="state" id="state" />
+                                </div>
+                            </div>
+
+
+                            <div class="form-group row">
+                                <label for="country" class="col-sm-2 col-form-label">Country</label>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" name="country" t-att-value="country" id="country" />
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="ctc" class="col-sm-2 col-form-label">CTC</label>
+                                <div class="col-md-6">
+                                    <input type="number" class="form-control" name="ctc" t-att-value="ctc" id="ctc" />
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="intern_duration" class="col-sm-2 col-form-label">Intership Duration</label>
+                                <div class="col-md-6">
+                                    <input type="number" class="form-control" name="intern_duration" t-att-value="intern_duration" id="intern_duration" />
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="intern_stpd" class="col-sm-2 col-form-label">Stipend</label>
+                                <div class="col-md-6">
+
+                                    <input type="number" class="form-control" name="intern_stpd" t-att-value="intern_stpd" id="intern_stpd" />
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="reg_close" class="col-sm-2 col-form-label">Registration close</label>
+                                <div class="col-md-6">
+                                    <input type="date" class="form-control" name="reg_close" t-att-value="reg_close" id="reg_close" />
+                                </div>
+                            </div>
+                            <div class="clearfix oe_login_buttons">
+                                <button type="submit" class="btn btn-primary pull-left">submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+    <template id="company_details">
+        <div t-call="website.layout">
+            <div class="container carousel-inner">
+                <div class="carousel-item active d-flex">
+                    <t t-foreach="com" t-as="c">
+                        <div class="col-xs-3 col-sm-3 col-md-3 m-3">
+                            <div class="card align-items-center" style="width: 18rem;">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <t t-out="c.company_name" />
+                                    </h5>
+                                    <p class="card-text">
+                                        Location:
+                                        <t t-out="c.city" />
+                                        ,
+                                        <t t-out="c.state" />
+                                        ,
+                                        <t t-out="c.country" />
+                                    </p>
+                                    <p href="#" class="card-text">
+                                        CTC:
+                                        <t t-out="c.ctc" />
+                                    </p>
+                                    <div class="float-right">
+                                        <button class="btn btn-primary">Apply</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </div>
+            </div>
+        </div>
+    </template>
+</odoo>

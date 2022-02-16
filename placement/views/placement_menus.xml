@@ -7,13 +7,17 @@
         <field name="view_mode">tree,form</field>
     </record>
 
+    <record id="placement_information_company_action" model="ir.actions.act_window">
+        <field name="name">Company Information</field>
+        <field name="res_model">company.placement</field>
+        <field name="view_mode">kanban,tree,form</field>
+    </record>
 
     <menuitem id="menu_placement_root" name="Placement">
         <menuitem id="menu_placement_student" name="Student">
-            <menuitem id="menu_placement_action" action="placement_information_student_action"/>
+            <menuitem id="menu_placement_action" action="placement_information_student_action" />
         </menuitem>
     </menuitem>
-
+    <menuitem id="menu_placement_company" name="Company" parent="menu_placement_root" />
+        <menuitem id="menu_placement_company_action" action="placement_information_company_action" parent="menu_placement_company"/>
 </odoo>
-
-
